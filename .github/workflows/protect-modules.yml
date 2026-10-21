@@ -16,9 +16,11 @@ on:
       apk_url:
         description: 'APK下载链接(需已用开发者keystore签名)'
         required: true
+        default: 'https://github.com/Hushchats1/unhardenapk/releases/download/v1.0.0/app-debug.apk'
       protect_config:
         description: '加固配置JSON(schema驱动;结构见 configs/v1/config-schema.json)'
         required: true
+        default: '{"schema_version":1,"sigcheck":true,"dex2c":{"enabled":true,"rules_file":""},"stringenc":{"enabled":true,"rules_file":"**","dex2c_stub":true},"antidiff":true,"envcheck":true,"packer":{"enabled":false}}'
       dpt_extra_args:
         description: '附加 dpt.jar 参数,空格分隔,如 --smaller(自由文本只构成打包参数注入面,最坏打包失败;secrets 不经此路径)'
         required: false
